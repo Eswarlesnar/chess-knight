@@ -1,4 +1,5 @@
 import boardArr from './data/boardArr';
+
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -6,6 +7,8 @@ function App() {
   const [pending , setPending ] = useState(false)
   const [selectedBlock , setSelectedBlock] = useState({})
   const [moves , setMoves] = useState([])
+ 
+
   const handleBlockClick =(e, item )=> {
     e.stopPropagation()
     if (pending === false) {
@@ -65,9 +68,7 @@ function App() {
   
   return (
     <div className="App">
-       <header>
-
-       </header>
+       
        <div className='content'>
          <div className='chessBoard'>
            {boardArr.map(val => {
@@ -91,7 +92,7 @@ function App() {
                      return <span 
                           key ={JSON.stringify(item)} 
                           id = {JSON.stringify(item)}
-                          className ={blockcolor}
+                          className ={blockcolor }
                           onClick ={e => {handleBlockClick(e, item)}}>
 
                      </span>
@@ -100,7 +101,7 @@ function App() {
              </div>
            })}
          </div>
-         <div className='moves'></div>
+        
        </div>
     </div>
   );

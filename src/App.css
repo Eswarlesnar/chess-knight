@@ -1,36 +1,39 @@
-.App {
-  text-align: center;
-}
+ 
 
 .chessBoard{
-  width:1000px;
-  margin : 100px auto;
-
+  width:100%;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .row{
   display:flex;
   flex-wrap: nowrap;
-  /* 
-   */
-   width :100%;
+ 
 }
 .row > span{
-   width: 60px;
+   width: 80px;
    aspect-ratio: 1/1;
 }
 .white{
-  background:whitesmoke
+  background: #aeada3 ;
 }
 .black{
-  background : black;
+  background : #3C412A;
 }
 .selected{
-  background-color: green;
+  background-color:#e56b1a ;
 }
 .moves{
-  background-color: red;
-}
-@media (prefers-reduced-motion: no-preference) {
- 
+  background:  #00A58C;
 }
 
+@media screen and (max-width :600px){
+  .row > span{
+    width :50px;
+    aspect-ratio: 1/1;
+  }
+}

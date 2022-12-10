@@ -1,7 +1,9 @@
 import boardArr from './data/boardArr';
-
+import Block from './components/Block';
 import './App.css';
 import { useEffect, useState } from 'react';
+import Appbar from './components/Appbar';
+import Moves from './components/Moves';
 
 function App() { 
   const [pending , setPending ] = useState(false)
@@ -40,6 +42,7 @@ function App() {
       setPending(true);
     } else {
       setPending(false);
+     
       document
         .getElementById(JSON.stringify(selectedBlock))
         .classList.remove('selected');
@@ -63,12 +66,13 @@ function App() {
           document.getElementById(JSON.stringify(x)).classList.remove('moves');
         });
       }
+
     }
   }, [moves , pending]);
   
   return (
-    <div className="App">
-       
+    <div className="App" style ={{background : "rgba(228, 241, 227, 0.7)" }}>
+       <Appbar />
        <div className='content'>
          <div className='chessBoard'>
            {boardArr.map(val => {
@@ -89,19 +93,21 @@ function App() {
                         blockcolor ="white"
                       }
                      }
-                     return <span 
+                     return <Block 
                           key ={JSON.stringify(item)} 
-                          id = {JSON.stringify(item)}
-                          className ={blockcolor }
-                          onClick ={e => {handleBlockClick(e, item)}}>
-
-                     </span>
+                          item = {item}
+                          blockcolor  ={blockcolor}
+                          handleBlockClick ={handleBlockClick}>
+                         </Block>
                   })
                  }
              </div>
            })}
          </div>
-        
+         {pending &&  <div className='moves-container'>
+          <h3>Possible moves of Knight are :</h3>
+          <Moves moves = {moves} />
+         </div>}
        </div>
     </div>
   );

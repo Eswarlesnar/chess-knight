@@ -1,4 +1,42 @@
+ :root{
+   --span-border-radius : 15px;
+   --font-color : grey
+ }
+
+ *{
+  margin :0;
+  padding: 0; 
+  box-sizing: border-box;
+ }
+
+
+.content{
+  display:grid;
+  grid-template-columns: 1.1fr 0.5fr;
+}
+
+.moves-container{
+  place-self: center;
+  margin-right: 100px;
+  margin-bottom: 200px;;
+}
+.moves-container > h3{
+  color : var(--font-color);
  
+}
+
+.display-moves{
+  display:flex;
+  flex-wrap: wrap;
+  gap:10px;
+}
+ 
+
+.display-moves >span{
+   text-transform: capitalize;
+   color : var(--font-color);
+   font-weight: 600;
+}
 
 .chessBoard{
   width:100%;
@@ -12,12 +50,12 @@
 .row{
   display:flex;
   flex-wrap: nowrap;
- 
 }
 .row > span{
    width: 80px;
    aspect-ratio: 1/1;
 }
+
 .white{
   background: #aeada3 ;
 }
@@ -31,9 +69,62 @@
   background:  #00A58C;
 }
 
-@media screen and (max-width :600px){
+.spanTopLeft{
+  border-radius: var(--span-border-radius) 0 0 0;
+}
+
+.spanTopRight{
+  border-radius : 0 var(--span-border-radius) 0 0
+}
+
+.spanBottomLeft{
+  border-radius : 0 0 0 var(--span-border-radius)
+}
+
+.spanBottomRight{
+  border-radius: 0 0 var(--span-border-radius) 0;
+}
+
+
+
+@media screen and (max-width: 1090px) {
+
+  .moves-container{
+    place-self: center;
+    margin-left: 100px;
+    
+  }
+  
+  
+}  
+
+
+@media screen and (max-width: 850px) {
+
+  .content{
+    display:flex; 
+    flex-wrap: wrap;
+   
+  }
+ 
+  
+  
+  
+}  
+
+
+@media screen and (max-width: 600px) {
+
   .row > span{
-    width :50px;
+    width: 60px;
     aspect-ratio: 1/1;
   }
-}
+  .content{
+    display:flex; 
+    flex-wrap: wrap;
+   
+  }
+  
+  
+  
+} 

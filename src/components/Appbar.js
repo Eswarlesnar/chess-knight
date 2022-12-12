@@ -33,11 +33,12 @@ const Appbar = () => {
                         }}
                        
                         >
-                        <Typography sx={{ p: 2 , width : "300px", background : "rgba(228, 241, 227, 0.7)"  ,color : "grey" , fontWeight :"600"}}  >Welcome to chess moves.
-                        <p> Click on any square in chess board to get possible moves of a Knight.</p>
-                        <p>Once you click you will get possible moves.</p>
-                        <p>Click again on a square to deselect your selection</p>
-                        <p>Repeat .....</p>
+                        <Typography sx={{ p: 2 , width : "300px", background : "rgba(228, 241, 227, 0.7)" ,color : "grey" , fontWeight :"600"}}  >
+                        <p style ={{marginBottom :"10px" }}> Welcome to chess moves.</p>
+                        <p>--Click on any square in chess board to get possible moves of a Knight.</p>
+                        <p>--Once you click you will get possible moves.</p>
+                        <p>--Click again on a square to deselect your selection</p>
+                        <p>--Repeat ...</p>
                         
                         </Typography>
                     </Popover>

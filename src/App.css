@@ -29,6 +29,7 @@
   display:flex;
   flex-wrap: wrap;
   gap:10px;
+  margin :20px auto;
 }
  
 
@@ -63,7 +64,8 @@
   background : #3C412A;
 }
 .selected{
-  background-color:#e56b1a ;
+  
+  background : hsl(40 91% 60%)
 }
 .moves{
   background:  #00A58C;
@@ -90,40 +92,42 @@
 @media screen and (max-width: 1090px) {
 
   .moves-container{
-    place-self: center;
-    margin-left: 100px;
-    
+    margin-inline: auto;
   }
-  
-  
-}  
-
-
-@media screen and (max-width: 850px) {
-
   .content{
     display:flex; 
     flex-wrap: wrap;
    
   }
- 
-  
   
   
 }  
 
 
-@media screen and (max-width: 600px) {
+
+
+@media screen and (max-width: 750px) {
 
   .row > span{
     width: 60px;
     aspect-ratio: 1/1;
   }
+ 
   .content{
-    display:flex; 
-    flex-wrap: wrap;
-   
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:0px;
   }
+  
+   .chessBoard{
+    width:100%;
+    height:80vh;
+   }
+
+   .App{
+    height :125vh;
+   }
   
   
   

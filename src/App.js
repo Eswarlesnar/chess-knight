@@ -71,7 +71,7 @@ function App() {
   }, [moves , pending]);
   
   return (
-    <div className="App" style ={{background : "rgba(228, 241, 227, 0.7)" }}>
+    <div className="App" style ={{background : "rgba(228, 241, 227, 0.7)"  }}>
        <Appbar />
        <div className='content'>
          <div className='chessBoard'>
